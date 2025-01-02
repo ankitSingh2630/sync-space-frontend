@@ -3,6 +3,8 @@ import { CiRead } from "react-icons/ci";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
 ;
 
 export default function Login() {
@@ -32,7 +34,13 @@ export default function Login() {
       );
     
       if(Response) {
-        console.log('Login response:', response.data);
+        //  
+        // console.log('Login response:', response.data.data.token);
+        // Set the cookie
+        Cookies.set('authToken', response.data.data.token, { expires: 7, secure: true });
+
+        // console.log('Login response:', response.data);
+         alert('Login successful');
         // console.log(response.headers);
       //  localStorage.setItem('username', response.data.user.name);
       //  localStorage.setItem('email', response.data.user.email);
@@ -40,8 +48,7 @@ export default function Login() {
 
 
       }
-      console.log('Login response:', response.data);
-      alert('Login successful');
+      
       // router.push('/home');
 
       // Optionally, store the token for future requests
