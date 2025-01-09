@@ -5,6 +5,7 @@ import BG from "../../public/bg.png";
 import GIF from "../../public/girl.gif"; 
 import { useState } from "react";
 
+
 const Page = () => {
 
     const [linkText, setLinkText] = useState("Sign Up");
@@ -97,6 +98,7 @@ const Page = () => {
             </div>
           </div>
         </div>
+       
       </div>
     );
   };

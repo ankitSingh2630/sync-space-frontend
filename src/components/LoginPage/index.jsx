@@ -53,7 +53,6 @@ export default function Login() {
         {error && (
           <div className="text-red-500 text-base font-medium mb-4">{error}</div>
         )}
-
         <form onSubmit={handleLogin}>
           <div className="mt-2">
             <input
