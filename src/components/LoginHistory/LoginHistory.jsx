@@ -1,6 +1,8 @@
+"use client"
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+
 
 const LoginHistory = () => {
   const [loginData, setLoginData] = useState([]);
@@ -35,6 +37,7 @@ const LoginHistory = () => {
     fetchLoginHistory();
   }, []);
 
+  
   const sortedData = [...loginData].sort((a, b) => {
     const { key, direction } = sortConfig;
     const aValue = key === 'srno' ? a.id : a[key]; // Use 'id' for srno

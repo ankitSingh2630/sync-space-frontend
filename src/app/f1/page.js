@@ -1,9 +1,13 @@
 "use client";
-import {Form, Button} from '@nextui-org/react';
+
 import App from "../../components/Multistep";
+import Navbar from '@/components/Navbar';
 const multi=()=>{
   return(
-   <App/>
+    <>
+    <Navbar />
+    <App/>
+    </>
   )
 }
 export default multi;

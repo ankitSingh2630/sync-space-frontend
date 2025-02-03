@@ -1,6 +1,9 @@
 import { Roboto_Slab } from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
+import { NextUIProvider } from '@nextui-org/system';
+import React from 'react';
+
 
 const robotoSlab = Roboto_Slab({
   subsets: ['latin'], // Load the Latin character set
@@ -26,8 +29,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+      <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+          />
+      </head>
       <body className="antialiased" suppressHydrationWarning={true}>
+        <NextUIProvider>
         {children}
+        </NextUIProvider>
+        
       </body>
     </html>
   );
